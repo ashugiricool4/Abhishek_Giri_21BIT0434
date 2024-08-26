@@ -71,7 +71,9 @@ The client is implemented as an HTML page with JavaScript for WebSocket communic
 
 # If any issue is encounterd then:
 -Ensure that the WebSocket server is running on ws://localhost:8765.
+
 -Check that the Python environment has the websockets package installed.
+
 -Review the console logs for any errors.
 
 
