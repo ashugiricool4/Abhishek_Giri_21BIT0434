@@ -1,7 +1,7 @@
 # Abhishek_Giri_21BIT0434
 
 # file 🔗 
- `https://drive.google.com/file/d/1To4hm_5WaZN6TVh0U98lcOtd_T2lVmso/view?usp=drive_link`
+ https://drive.google.com/file/d/1To4hm_5WaZN6TVh0U98lcOtd_T2lVmso/view?usp=drive_link
 
 . Chess-Like Game
 
@@ -39,7 +39,7 @@ It manages the game state, handles player moves, and broadcasts updates to conne
 -- To serve an HTML client interface, create a simple Flask app:
 -python app.py
 
--The server will start on `localhost:8765`.
+-The server will start on localhost:8765.
 
 # Web Client Implementation
 
