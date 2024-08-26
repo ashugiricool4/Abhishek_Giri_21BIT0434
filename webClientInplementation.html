@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chess-Like Game</title>
+    <style>
+        #board {
+            display: grid;
+            grid-template-columns: repeat(5, 50px);
+            grid-template-rows: repeat(5, 50px);
+            gap: 5px;
+        }
+        .cell {
+            width: 50px;
+            height: 50px;
+            border: 1px solid black;
+            text-align: center;
+            line-height: 50px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Chess-Like Game</h1>
+    <div id="board"></div>
+    <div id="status"></div>
+
+    <script>
+        const boardElement = document.getElementById("board");
+        const statusElement = document.getElementById("status");
+        let websocket;
+        let player;
+
+        function initializeWebSocket() {
+            websocket = new WebSocket("ws://localhost:8765/");
+            websocket.onmessage = function(event) {
+                const data = JSON.parse(event.data);
+                if (data.type === "welcome") {
+                    player = data.player;
+                    statusElement.textContent = `You are Player ${player}`;
+                } else if (data.type === "update") {
+                    renderBoard(data.board);
+                    statusElement.textContent = `Turn: Player ${data.turn}`;
+                } else if (data.type === "invalid") {
+                    alert(data.message);
+                }
+            };
+        }
+
+        function renderBoard(board) {
+            boardElement.innerHTML = "";
+            for (let row of board) {
+                for (let cell of row) {
+                    const cellElement = document.createElement("div");
+                    cellElement.className = "cell";
+                    cellElement.textContent = cell;
+                    boardElement.appendChild(cellElement);
+                }
+            }
+        }
+
+        initializeWebSocket();
+    </script>
+</body>
+</html>
