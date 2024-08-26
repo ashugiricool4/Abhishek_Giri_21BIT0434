@@ -16,7 +16,7 @@ This project implements a chess-like game with a server-side implementation in P
 
 # Server-Side Implementation
 
-The server is implemented in Python using the `asyncio` and `websockets` libraries. 
+The server is implemented in Python using the asyncio and websockets libraries. 
 It manages the game state, handles player moves, and broadcasts updates to connected clients.
 
 . Key Components
