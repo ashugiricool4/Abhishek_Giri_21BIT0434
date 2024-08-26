@@ -57,9 +57,13 @@ The client is implemented as an HTML page with JavaScript for WebSocket communic
 # Getting Started
 
 --To play the game:
+
 -Open the HTML client interface (if running the Flask server) or use a WebSocket client like websocat or a browser-based client.
+
 -Two players should connect to the WebSocket server.
+
 -Players will be assigned either "A" or "B".
+
 -Players take turns making moves on the grid.
 
 # Future Improvements
