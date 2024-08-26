@@ -24,7 +24,7 @@ It manages the game state, handles player moves, and broadcasts updates to conne
 - Python 3.7+
 - Websockets library
 
-# You can install the required package using pip:
+# install the required package using pip:
 -bash
 -pip install websockets
 
